@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi Nusantara</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <style>
+    body {
+        margin-top: 60px;
+    }
+  </style>
+  <body>
+    <div class="bg">
+      <img src="/asset/bg2.png" alt="" />
+    </div>
+    <nav>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html"
+            ><h1>Kopi<span>Nusantara</span></h1></a
+          >
+        </div>
+        <div class="nav-a" id="navMenu">
+          <ul>
+            <li>
+              <a href="/home.html">Home</a>
+              <a href="/about.html">About</a>
+              <a href="/menu.html">Menu</a>
+              <a href="Testimonial.html">Testimonial</a>
+              <a href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <button><a href="">Ngobrol Yukk</a></button>
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="menu">
+        <div class="menu-text">
+          <h1>
+            Nikmati variant kopi pilihan kami yang diracik dari biji terbaik di
+            indonesia
+          </h1>
+          <p>Diseduh dengan hati, disajikan untukmu</p>
+
+          <div class="menu-card">
+            <div class="card-menu" id="card1">
+              <img src="/asset/kopi1.jpg" alt="" />
+              <div class="text-price">
+                <h3>Espresso</h3>
+                <h3>Rp12.000</h3>
+              </div>
+              <p>Kopi hitam pekat dengan aroma kuat.</p>
+              <button><a href="">Beli Sekarang</a></button>
+            </div>
+
+            <div class="card-menu" id="card2">
+              <img src="/asset/kopi2.jpg" alt="" />
+              <div class="text-price">
+                <h3>Cappuccino</h3>
+                <h3>Rp18.000</h3>
+              </div>
+              <p>Perpaduan espresso dan susu creamy.</p>
+              <button><a href="">Beli Sekarang</a></button>
+            </div>
+
+            <div class="card-menu">
+              <img src="/asset/kopi3.jpg" alt="" />
+              <div class="text-price">
+                <h3>Latte</h3>
+                <h3>Rp20.000</h3>
+              </div>
+              <p>Rasa lembut dengan foam susu halus.</p>
+              <button><a href="">Beli Sekarang</a></button>
+            </div>
+
+            <div class="card-menu">
+              <img src="/asset/kopi4.jpg" alt="" />
+              <div class="text-price">
+                <h3>Americano</h3>
+                <h3>Rp15.000</h3>
+              </div>
+              <p>Espresso dengan tambahan air panas.</p>
+              <button><a href="">Beli Sekarang</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <audio id="music" autoplay loop>
+      <source
+        src="/asset/Alex Warren - Ordinary 30 Minutes NON STOP.mp3"
+        type="audio/mpeg"
+        />
+    </audio> -->
+    <footer class="footer-form" role="contentinfo">
+      <div class="container">
+        <div class="footer-form-main">
+          <div class="footer-form-info">
+            <h3>Contact Kopi Nusantara</h3>
+            <p>
+              Jika Anda Ada Pertanyaan Atau Ada Masalah Mengenai Produk Kami
+              Silakan Kirim Pesan.
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@yoursite.com">info@kopinusantara.com</a
+              ><br />
+              <strong>Phone:</strong>
+              <a href="tel:+1555010203">(+62) 812-9082-9082</a>
+            </p>
+            <p>
+              Kopi Nusantara<br />
+              Bali Batubulan, DC 12345
+            </p>
+          </div>
+          <div class="footer-form-form-section">
+            <h3>Kirim Pesan Anda</h3>
+            <form class="footer-form-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="footer-name">Nama Anda</label>
+                <input
+                  type="text"
+                  id="footer-name"
+                  name="name"
+                  class="form-control"
+                  placeholder="Masukkan Nama Anda"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="footer-email">Email Anda</label>
+                <input
+                  type="email"
+                  id="footer-email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Masukkan Email Anda"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="footer-message">Pesan</label>
+                <textarea
+                  id="footer-message"
+                  name="message"
+                  class="form-control"
+                  placeholder="Masukkkan Pesan Anda"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="footer-form-submit-button">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-form-bottom">
+          <p>&copy; 2026 Kopi Nusantara.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Hamburger menu toggle
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      // Close menu when link is clicked
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
+</html>
