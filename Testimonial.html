@@ -11,6 +11,12 @@
         margin-top: 60px;
     }
   </style>
+  <audio id="music" autoplay loop>
+      <source
+        src="/asset/Alex Warren - Ordinary 30 Minutes NON STOP.mp3"
+        type="audio/mpeg"
+        />
+    </audio>
   <body>
     <div class="bg">
       <img src="/asset/bg2.png" alt="" />
@@ -183,12 +189,6 @@
         </div>
       </div>
     </div>
-    <!-- <audio id="music" autoplay loop>
-      <source
-        src="/asset/Alex Warren - Ordinary 30 Minutes NON STOP.mp3"
-        type="audio/mpeg"
-        />
-    </audio> -->
     <footer class="footer-form" role="contentinfo">
       <div class="container">
         <div class="footer-form-main">
@@ -256,5 +256,43 @@
         </div>
       </div>
     </footer>
+    <script>
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
+      }
+
+      // Close menu when link is clicked
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+      document.body.addEventListener(
+        "click",
+        () => {
+          music.play();
+        },
+        { once: true },
+      );
+
+      const music = document.getElementById("music");
+      const savedTime = localStorage.getItem("music-time");
+
+      if (savedTime) {
+        music.currentTime = savedTime;
+      }
+
+      setInterval(() => {
+        localStorage.setItem("music-time", music.currentTime);
+      }, 1000);
+
+      music.play();
+    </script>
   </body>
 </html>

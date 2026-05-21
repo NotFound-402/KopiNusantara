@@ -8,9 +8,15 @@
   </head>
   <style>
     body {
-        margin-top: 60px;
+      margin-top: 60px;
     }
   </style>
+  <audio id="music" autoplay loop>
+      <source
+        src="/asset/Alex Warren - Ordinary 30 Minutes NON STOP.mp3"
+        type="audio/mpeg"
+        />
+    </audio>
   <body>
     <div class="bg">
       <img src="/asset/bg2.png" alt="" />
@@ -50,7 +56,9 @@
             Dari biji pilihan hingga ke meja Anda. kami hadirkan rasa yang
             menenangkan.
           </p>
-          <button id="coba-button"><a href="/contact.html">Coba Sekarang</a></button>
+          <button id="coba-button">
+            <a href="/contact.html">Coba Sekarang</a>
+          </button>
           <button id="button-menu"><a href="/menu.html">Lihat Menu</a></button>
 
           <div class="card">
@@ -63,23 +71,19 @@
         </div>
       </div>
     </section>
-    <!-- <audio id="music" autoplay loop>
-      <source
-        src="/asset/Alex Warren - Ordinary 30 Minutes NON STOP.mp3"
-        type="audio/mpeg"
-        />
-    </audio> -->
     <footer class="footer-form" role="contentinfo">
       <div class="container">
         <div class="footer-form-main">
           <div class="footer-form-info">
             <h3>Contact Kopi Nusantara</h3>
             <p>
-              Jika Anda Ada Pertanyaan Atau Ada Masalah Mengenai Produk Kami Silakan Kirim Pesan.
+              Jika Anda Ada Pertanyaan Atau Ada Masalah Mengenai Produk Kami
+              Silakan Kirim Pesan.
             </p>
             <p>
               <strong>Email:</strong>
-              <a href="mailto:info@yoursite.com">info@kopinusantara.com</a><br />
+              <a href="mailto:info@yoursite.com">info@kopinusantara.com</a
+              ><br />
               <strong>Phone:</strong>
               <a href="tel:+1555010203">(+62) 812-9082-9082</a>
             </p>
@@ -135,23 +139,42 @@
       </div>
     </footer>
     <script>
-      // Hamburger menu toggle
-      const navToggle = document.getElementById('navToggle');
-      const navMenu = document.getElementById('navMenu');
-      
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+
       if (navToggle) {
-        navToggle.addEventListener('click', () => {
-          navMenu.classList.toggle('active');
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
         });
       }
 
-      // Close menu when link is clicked
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
+      const navLinks = navMenu.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
         });
       });
+
+      document.body.addEventListener(
+        "click",
+        () => {
+          music.play();
+        },
+        { once: true },
+      );
+
+      const music = document.getElementById("music");
+      const savedTime = localStorage.getItem("music-time");
+
+      if (savedTime) {
+        music.currentTime = savedTime;
+      }
+
+      setInterval(() => {
+        localStorage.setItem("music-time", music.currentTime);
+      }, 1000);
+
+      music.play();
     </script>
   </body>
 </html>
